@@ -1,49 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-
+<html lang="en" data-theme="light" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bryan Kum Zhan Kin — Software System Developer &amp; Systems Builder</title>
-  <meta name="description"
-    content="Portfolio and technical dossier of Bryan Kum Zhan Kin, Software System Development student at TAR UMT Penang. Specializing in React, Firebase, LLM integration, and enterprise IT infrastructure.">
+  <title>Bryan Kum Zhan Kin — Software Systems Developer</title>
+  <meta name="description" content="Portfolio of Bryan Kum Zhan Kin, Software System Development student at TAR UMT Penang. Full-stack web applications, applied AI utilities, and secure cloud systems.">
   <meta name="author" content="Bryan Kum Zhan Kin">
 
-  <!-- Open Graph / Meta -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Bryan Kum Zhan Kin — Software Systems &amp; Engineering Portfolio">
-  <meta property="og:description"
-    content="Interactive developer dossier featuring AI agents, responsive web applications, and verified cloud credentials.">
+  <meta property="og:title" content="Bryan Kum Zhan Kin — Software Systems Portfolio">
+  <meta property="og:description" content="Interactive developer portfolio showcasing full-stack applications, applied AI utilities, and verifiable cloud credentials.">
   <meta property="og:url" content="https://bkum-05.github.io/Bio/">
+
+  <!-- Zero-FOUC Theme Initializer (Executes synchronously before CSS parse) -->
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('bk_theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (_) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- Anti-FOUC Theme Initialization -->
-  <script>
-    (function () {
-      const savedTheme = localStorage.getItem('bk_theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
 </head>
-
 <body>
-  <!-- Accessibility Skip Link -->
+  <!-- Skip Link for Keyboard Accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Top Sticky Navigation & Telemetry Bar -->
+  <!-- Header Navigation & Telemetry -->
   <header class="site-header" id="top">
     <div class="container header-container">
       <div class="brand-group">
         <a href="#top" class="brand-logo" aria-label="Bryan Kum Home">
           BK<span class="brand-dot">.</span>
         </a>
-        <div class="system-status-pill" title="Currently seeking January 2028 industrial placement">
-          <span class="status-indicator"></span>
-          <span class="status-text">Available for Jan 2028 Internship</span>
+        <div class="system-status-pill" title="TAR UMT Degree Student">
+          <span class="status-indicator" aria-hidden="true"></span>
+          <span class="status-text">Seeking 2027/2028 Industrial Training</span>
         </div>
       </div>
 
@@ -58,12 +58,9 @@
       </nav>
 
       <div class="header-actions">
-        <!-- Live Penang Local Time (UTC+8) -->
         <span class="local-time-badge" id="penang-time" title="Penang, Malaysia (UTC+8)">--:-- MYT</span>
-        <!-- Theme Toggle -->
-        <button id="theme-toggle" class="theme-btn" aria-label="Toggle visual theme" type="button">
-          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            aria-hidden="true">
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle visual theme" aria-pressed="false">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -74,8 +71,7 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            aria-hidden="true">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
@@ -84,14 +80,21 @@
   </header>
 
   <main id="main-content" class="container">
-
+    
     <!-- Hero Section -->
     <section class="hero-section" aria-labelledby="hero-name">
       <div class="hero-layout">
         <div class="hero-avatar-container">
           <div class="avatar-ring">
-            <img src="assets/bkum.png" alt="Bryan Kum Zhan Kin" class="hero-avatar" width="144" height="144"
-              loading="eager" onerror="this.onerror=null; this.src='assets/bkum.png';">
+            <img 
+              src="assets/profile.jpg" 
+              alt="Bryan Kum Zhan Kin" 
+              class="hero-avatar"
+              width="144" 
+              height="144"
+              loading="eager"
+              onerror="this.onerror=null; this.src='assets/avatar.png';"
+            >
           </div>
           <span class="avatar-badge" title="Degree Student @ TAR UMT">TAR UMT</span>
         </div>
@@ -102,44 +105,23 @@
           </div>
           <h1 id="hero-name" class="hero-title">Bryan Kum Zhan Kin</h1>
           <p class="hero-tagline">
-            Software System Development student building resilient web applications, conversational AI integrations, and
-            verifiable cloud architectures.
+            Software System Development student building resilient web applications, conversational AI integrations, and secure cloud-backed prototypes.
           </p>
           <p class="hero-summary">
-            Pursuing Bachelor in IT (Honours) at TAR UMT. Combines practical hands-on IT infrastructure experience from
-            <strong>AMARI SPICE Penang</strong> with modern full-stack development across React, Firebase, and LLM
-            automation.
+            Pursuing Bachelor in IT (Honours) at TAR UMT Penang. Combines practical enterprise IT support experience from <strong>AMARI SPICE Penang</strong> with modern full-stack development across React, Python, Firebase, and LLM automation.
           </p>
 
           <div class="hero-cta-group">
-            <a href="assets/Bryan Kum Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <polyline points="10 9 9 9 8 9"></polyline>
-              </svg>
+            <a href="bryan_kum_resume.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
               View Verified Résumé (PDF)
             </a>
             <a href="https://github.com/BKum-05" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-              GitHub Portfolio
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              GitHub Profile
             </a>
-            <a href="https://www.linkedin.com/in/bryan-kum-11b184330" class="btn btn-secondary" target="_blank"
-              rel="noopener noreferrer">
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
+            <a href="https://www.linkedin.com/in/bryan-kum-11b184330" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               LinkedIn
             </a>
           </div>
@@ -147,18 +129,18 @@
       </div>
     </section>
 
-    <!-- Featured Projects Section with Interactive Inspection Mode -->
+    <!-- Projects Section -->
     <section id="projects" class="content-section" aria-labelledby="projects-header">
       <div class="section-top-bar">
         <div>
           <h2 id="projects-header" class="section-heading">Featured Engineering Projects</h2>
-          <p class="section-subheading">Production applications, cloud data flow, and interactive live simulations</p>
+          <p class="section-subheading">Full-stack prototypes, serverless cloud databases, and verifiable state architectures</p>
         </div>
         <div class="filter-controls" role="group" aria-label="Project Tech Filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="ai">AI / Python</button>
-          <button class="filter-btn" data-filter="react">React / Web</button>
-          <button class="filter-btn" data-filter="cloud">Firebase / Cloud</button>
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="ai" aria-pressed="false">AI / Python</button>
+          <button class="filter-btn" data-filter="react" aria-pressed="false">React / Web</button>
+          <button class="filter-btn" data-filter="cloud" aria-pressed="false">Firebase / Cloud</button>
         </div>
       </div>
 
@@ -168,109 +150,99 @@
         <article class="project-showcase-card" data-tags="ai" aria-labelledby="proj-ai-name">
           <div class="card-inner-header">
             <div>
-              <span class="project-kicker">CONVERSATIONAL AI APPLICATION</span>
-              <h3 id="proj-ai-name" class="project-title">AI Family Expense Tracker</h3>
+              <span class="project-kicker">APPLIED LLM UTILITY | PYTHON</span>
+              <h3 id="proj-ai-name" class="project-title">Natural Language Expense Parser</h3>
               <div class="tech-tag-row">
                 <span class="tech-tag">Google AI Studio</span>
                 <span class="tech-tag">Streamlit</span>
                 <span class="tech-tag">Python</span>
-                <span class="tech-tag">GitHub CI/CD</span>
+                <span class="tech-tag">Gemini API</span>
               </div>
             </div>
             <div class="project-action-links">
-              <a href="https://finance-agent-bkum05.streamlit.app/" class="link-btn primary" target="_blank"
-                rel="noopener noreferrer">
-                Launch Live App <span class="arrow-glyph" aria-hidden="true">&nearr;</span>
+              <a href="https://finance-agent-bkum05.streamlit.app/" class="link-btn primary" target="_blank" rel="noopener noreferrer">
+                Live Demo <span class="arrow-glyph" aria-hidden="true">&nearr;</span>
+              </a>
+              <a href="https://github.com/BKum-05" class="link-btn secondary" target="_blank" rel="noopener noreferrer">
+                Source Code <span class="arrow-glyph" aria-hidden="true">&nearr;</span>
               </a>
             </div>
           </div>
 
           <p class="project-lead-text">
-            Engineered a natural-language financial tracking agent that parses unstructured household spending notes
-            into clean, categorizable budget records in real time.
+            Lightweight web utility built with Streamlit and Python. Converts unstructured, conversational expense notes into validated JSON schemas via prompt-engineered Gemini API calls.
           </p>
 
-          <!-- Interactive Inspection Tabs -->
           <div class="interactive-tab-container">
-            <div class="tab-nav" role="tablist">
-              <button class="tab-btn active" role="tab" aria-selected="true" data-tab="sim-ai">Interactive
-                Parser</button>
-              <button class="tab-btn" role="tab" aria-selected="false" data-tab="arch-ai">System Architecture</button>
-              <button class="tab-btn" role="tab" aria-selected="false" data-tab="dec-ai">Trade-offs &amp;
-                Decisions</button>
+            <div class="tab-nav" role="tablist" aria-label="Expense Parser Analysis Tabs">
+              <button id="tab-ai-sim" class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-ai-sim" tabindex="0">Interactive Parser</button>
+              <button id="tab-ai-arch" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-ai-arch" tabindex="-1">System Architecture</button>
+              <button id="tab-ai-dec" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-ai-dec" tabindex="-1">Trade-offs &amp; Decisions</button>
             </div>
 
-            <!-- Tab Panel 1: Simulation -->
-            <div class="tab-panel active" id="sim-ai" role="tabpanel">
+            <div class="tab-panel active" id="panel-ai-sim" role="tabpanel" aria-labelledby="tab-ai-sim" tabindex="0">
               <div class="simulation-box">
-                <span class="sim-label">Live Client-Side Parsing Demo (Type or click a preset):</span>
+                <label for="ai-input" class="sim-label">Client-Side Heuristic Preview (Production calls Gemini API):</label>
                 <div class="sim-input-row">
-                  <input type="text" id="ai-input" class="sim-input"
-                    value="Dinner at SPICE Arena RM48.50 with colleagues" aria-label="Sample expenditure text">
+                  <input type="text" id="ai-input" class="sim-input" value="Dinner at SPICE Arena RM48.50 with colleagues" aria-label="Sample expenditure text">
                   <button id="ai-run-btn" class="sim-btn" type="button">Parse Note</button>
                 </div>
                 <div class="preset-chips">
-                  <button class="chip" data-sample="Grab to TAR UMT Penang RM14 transport">Preset: Transport</button>
-                  <button class="chip" data-sample="Groceries at Lotus Bayan Lepas RM86.20 household">Preset:
-                    Groceries</button>
+                  <button class="chip" type="button" data-sample="Grab to TAR UMT Penang RM14 transport">Preset: Transport</button>
+                  <button class="chip" type="button" data-sample="Groceries at Lotus Bayan Lepas RM86.20 household">Preset: Groceries</button>
+                  <button class="chip" type="button" data-sample="Coffee voucher at Cafe RM0.00 promotion">Preset: Zero Amount (RM0)</button>
                 </div>
                 <div class="sim-output-terminal" id="ai-output" aria-live="polite">
-                  <span class="term-dim">// Extracted Structured JSON Payload:</span>
+                  <span class="term-dim">// Structured JSON Schema Extraction:</span>
                   <pre><code>{
-                    "vendor": "SPICE Arena",
-                    "category": "Food &amp; Dining",
-                    "amount_myr": 48.50,
-                    "status": "categorized",
-                    "currency": "MYR"
-                  }</code></pre>
+  "vendor": "SPICE Arena",
+  "category": "Food &amp; Beverage",
+  "amount_myr": 48.50,
+  "status": "client_heuristic_preview"
+}</code></pre>
                 </div>
               </div>
             </div>
 
-            <!-- Tab Panel 2: Architecture -->
-            <div class="tab-panel" id="arch-ai" role="tabpanel">
+            <div class="tab-panel" id="panel-ai-arch" role="tabpanel" aria-labelledby="tab-ai-arch" tabindex="0" hidden>
               <div class="architecture-flow-diagram">
                 <div class="arch-node">
                   <span class="node-title">Client UI</span>
-                  <span class="node-sub">Streamlit Web App</span>
+                  <span class="node-sub">Streamlit App</span>
                 </div>
                 <div class="arch-arrow">&rarr;</div>
                 <div class="arch-node">
                   <span class="node-title">Prompt Engine</span>
-                  <span class="node-sub">Few-shot Instruction Template</span>
+                  <span class="node-sub">Few-shot JSON Prompt</span>
                 </div>
                 <div class="arch-arrow">&rarr;</div>
                 <div class="arch-node">
-                  <span class="node-title">Google Gemini Model</span>
-                  <span class="node-sub">JSON Extraction API</span>
+                  <span class="node-title">Gemini API</span>
+                  <span class="node-sub">Extraction Model</span>
                 </div>
                 <div class="arch-arrow">&rarr;</div>
                 <div class="arch-node">
-                  <span class="node-title">Family Store</span>
+                  <span class="node-title">Storage</span>
                   <span class="node-sub">Persistent Log Sheet</span>
                 </div>
               </div>
             </div>
 
-            <!-- Tab Panel 3: Decisions -->
-            <div class="tab-panel" id="dec-ai" role="tabpanel">
+            <div class="tab-panel" id="panel-ai-dec" role="tabpanel" aria-labelledby="tab-ai-dec" tabindex="0" hidden>
               <ul class="decision-bullets">
-                <li><strong>Why Streamlit over React for v1:</strong> Prioritized rapid 48-hour delivery to
-                  non-technical family members; eliminated build-pipeline friction while iterating prompt structures.
-                </li>
-                <li><strong>Prompt Isolation:</strong> Enforced strict JSON output constraints via system prompts to
-                  prevent conversational hallucination or malformed numbers.</li>
+                <li><strong>Streamlit for Rapid Prototyping:</strong> Enabled immediate zero-build deployment for non-technical family users without complex frontend toolchains.</li>
+                <li><strong>JSON Extraction Guardrails:</strong> Configured system prompt constraints ensuring output adheres strictly to structured numeric amounts and predefined categories.</li>
               </ul>
             </div>
           </div>
         </article>
 
-        <!-- Project 2: IBM Guided Capstone Dashboard -->
+        <!-- Project 2: React Expense Allocation Dashboard -->
         <article class="project-showcase-card" data-tags="react" aria-labelledby="proj-ibm-name">
           <div class="card-inner-header">
             <div>
-              <span class="project-kicker">IBM GUIDED CAPSTONE PROJECT</span>
-              <h3 id="proj-ibm-name" class="project-title">Expense Tracker Dashboard</h3>
+              <span class="project-kicker">REACT CLIENT-SIDE ARCHITECTURE</span>
+              <h3 id="proj-ibm-name" class="project-title">Expense Allocation Dashboard</h3>
               <div class="tech-tag-row">
                 <span class="tech-tag">React.js</span>
                 <span class="tech-tag">JavaScript (ES6+)</span>
@@ -279,33 +251,29 @@
               </div>
             </div>
             <div class="project-action-links">
-              <a href="https://bkum-05.github.io/M4-Dashboard/" class="link-btn primary" target="_blank"
-                rel="noopener noreferrer">
-                Live App <span class="arrow-glyph" aria-hidden="true">&nearr;</span>
+              <a href="https://bkum-05.github.io/M4-Dashboard/" class="link-btn primary" target="_blank" rel="noopener noreferrer">
+                Live Demo <span class="arrow-glyph" aria-hidden="true">&nearr;</span>
               </a>
-              <a href="https://github.com/BKum-05/M4-Dashboard" class="link-btn secondary" target="_blank"
-                rel="noopener noreferrer">
+              <a href="https://github.com/BKum-05/M4-Dashboard" class="link-btn secondary" target="_blank" rel="noopener noreferrer">
                 Source Code <span class="arrow-glyph" aria-hidden="true">&nearr;</span>
               </a>
             </div>
           </div>
 
           <p class="project-lead-text">
-            Enterprise capstone dashboard built to solve dynamic state management challenges across budget allocations,
-            currency balances, and transaction itemizations.
+            Interactive single-page budgeting dashboard built with React. Demonstrates unidirectional state flow, custom event dispatching, and dynamic currency conversions without third-party state managers.
           </p>
 
           <div class="interactive-tab-container">
-            <div class="tab-nav" role="tablist">
-              <button class="tab-btn active" role="tab" aria-selected="true" data-tab="sim-ibm">Live Balance
-                Calculator</button>
-              <button class="tab-btn" role="tab" aria-selected="false" data-tab="arch-ibm">State Architecture</button>
-              <button class="tab-btn" role="tab" aria-selected="false" data-tab="dec-ibm">Engineering Decisions</button>
+            <div class="tab-nav" role="tablist" aria-label="React Dashboard Analysis Tabs">
+              <button id="tab-ibm-sim" class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-ibm-sim" tabindex="0">Live Balance Calculator</button>
+              <button id="tab-ibm-arch" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-ibm-arch" tabindex="-1">State Architecture</button>
+              <button id="tab-ibm-dec" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-ibm-dec" tabindex="-1">Engineering Decisions</button>
             </div>
 
-            <div class="tab-panel active" id="sim-ibm" role="tabpanel">
+            <div class="tab-panel active" id="panel-ibm-sim" role="tabpanel" aria-labelledby="tab-ibm-sim" tabindex="0">
               <div class="simulation-box">
-                <span class="sim-label">Interactive React State Calculation Simulation:</span>
+                <span class="sim-label">Integer-Precision State Simulation (RM Cent Math):</span>
                 <div class="calc-widget">
                   <div class="calc-row">
                     <span>Allocated Budget: <strong>RM 2,000.00</strong></span>
@@ -313,28 +281,23 @@
                     <span>Remaining: <strong id="calc-remaining" class="positive-balance">RM 1,350.00</strong></span>
                   </div>
                   <div class="calc-actions">
-                    <button class="sim-btn sm" id="add-expense-btn" type="button">+ Simulate Adding RM 150
-                      Expense</button>
+                    <button class="sim-btn sm" id="add-expense-btn" type="button">+ Simulate Adding RM 150 Expense</button>
                     <button class="sim-btn sm secondary" id="reset-expense-btn" type="button">Reset</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="tab-panel" id="arch-ibm" role="tabpanel">
+            <div class="tab-panel" id="panel-ibm-arch" role="tabpanel" aria-labelledby="tab-ibm-arch" tabindex="0" hidden>
               <p class="panel-narrative">
-                State is lifted to the top-level <code>App</code> component. Child components
-                (<code>ExpenseTotal</code>, <code>ExpenseList</code>, <code>AllocationForm</code>) consume immutable
-                state and dispatch updates via reducer-pattern action dispatches.
+                State is lifted to the top-level <code>App</code> component. Child components (<code>ExpenseTotal</code>, <code>ExpenseList</code>, <code>AllocationForm</code>) consume immutable state and trigger updates via reducer action dispatches.
               </p>
             </div>
 
-            <div class="tab-panel" id="dec-ibm" role="tabpanel">
+            <div class="tab-panel" id="panel-ibm-dec" role="tabpanel" aria-labelledby="tab-ibm-dec" tabindex="0" hidden>
               <ul class="decision-bullets">
-                <li><strong>State Lifting:</strong> Kept state synchronous across balance summaries and item lists
-                  without resorting to bulky Redux stores for an SPA of this scope.</li>
-                <li><strong>Bootstrap Integration:</strong> Utilized modular grid tokens while writing scoped custom CSS
-                  to prevent vendor stylesheet collisions.</li>
+                <li><strong>State Lifting:</strong> Maintained synchronous data consistency across balance summaries and item lists without adding external state libraries.</li>
+                <li><strong>Scoped CSS Integration:</strong> Combined Bootstrap layout grids with scoped custom CSS to prevent stylesheet rule conflicts.</li>
               </ul>
             </div>
           </div>
@@ -344,7 +307,7 @@
         <article class="project-showcase-card" data-tags="cloud" aria-labelledby="proj-vms-name">
           <div class="card-inner-header">
             <div>
-              <span class="project-kicker">ENTERPRISE FACILITY OPERATIONS</span>
+              <span class="project-kicker">FACILITY ACCESS OPERATIONS</span>
               <h3 id="proj-vms-name" class="project-title">Visitor Management System</h3>
               <div class="tech-tag-row">
                 <span class="tech-tag">JavaScript (ES6+)</span>
@@ -354,32 +317,31 @@
               </div>
             </div>
             <div class="project-action-links">
-              <a href="https://bkum-05.github.io/visitor-flow/" class="link-btn primary" target="_blank"
-                rel="noopener noreferrer">
-                Live App <span class="arrow-glyph" aria-hidden="true">&nearr;</span>
+              <a href="https://bkum-05.github.io/visitor-flow/" class="link-btn primary" target="_blank" rel="noopener noreferrer">
+                Live Demo <span class="arrow-glyph" aria-hidden="true">&nearr;</span>
+              </a>
+              <a href="https://github.com/BKum-05" class="link-btn secondary" target="_blank" rel="noopener noreferrer">
+                Source Code <span class="arrow-glyph" aria-hidden="true">&nearr;</span>
               </a>
             </div>
           </div>
 
           <p class="project-lead-text">
-            Digital check-in platform engineered to replace paper facility visitor binders, accelerating lobby
-            throughput and establishing searchable security audit trails.
+            Digital check-in platform engineered to replace paper facility logbooks, accelerating reception throughput and establishing real-time searchable security audit trails.
           </p>
 
           <div class="interactive-tab-container">
-            <div class="tab-nav" role="tablist">
-              <button class="tab-btn active" role="tab" aria-selected="true" data-tab="sim-vms">Visitor Lifecycle
-                Flow</button>
-              <button class="tab-btn" role="tab" aria-selected="false" data-tab="arch-vms">Firestore Security
-                Model</button>
+            <div class="tab-nav" role="tablist" aria-label="Visitor System Analysis Tabs">
+              <button id="tab-vms-sim" class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-vms-sim" tabindex="0">Visitor Lifecycle Flow</button>
+              <button id="tab-vms-arch" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-vms-arch" tabindex="-1">Firestore Security Model</button>
             </div>
 
-            <div class="tab-panel active" id="sim-vms" role="tabpanel">
+            <div class="tab-panel active" id="panel-vms-sim" role="tabpanel" aria-labelledby="tab-vms-sim" tabindex="0">
               <div class="lifecycle-pipeline">
                 <div class="step-card active">
                   <span class="step-num">01</span>
                   <span class="step-name">Pre-Registration</span>
-                  <span class="step-status">Validates IC/Pass</span>
+                  <span class="step-status">Validates Pass</span>
                 </div>
                 <div class="step-card active">
                   <span class="step-num">02</span>
@@ -399,10 +361,23 @@
               </div>
             </div>
 
-            <div class="tab-panel" id="arch-vms" role="tabpanel">
-              <pre class="code-snippet"><code>match /visitors/{visitorId} {
-  allow read, write: if request.auth != null &amp;&amp; request.auth.token.role == 'admin';
-  allow create: if request.resource.data.name is string;
+            <div class="tab-panel" id="panel-vms-arch" role="tabpanel" aria-labelledby="tab-vms-arch" tabindex="0" hidden>
+              <pre class="code-snippet"><code>rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /visitors/{visitorId} {
+      // Role-based staff authorization for full log read and deletion
+      allow read, delete: if request.auth != null && request.auth.token.role == 'staff';
+
+      // Enforced schema validation & length constraints on kiosk submissions
+      allow create: if request.resource.data.keys().hasAll(['fullName', 'icLast4', 'checkInTime'])
+                    && request.resource.data.fullName is string
+                    && request.resource.data.fullName.size() >= 3
+                    && request.resource.data.fullName.size() <= 80
+                    && request.resource.data.icLast4.matches('^[0-9]{4}$')
+                    && request.resource.data.checkInTime is timestamp;
+    }
+  }
 }</code></pre>
             </div>
           </div>
@@ -415,7 +390,7 @@
       <div class="section-top-bar">
         <div>
           <h2 id="skills-header" class="section-heading">Technical Capabilities &amp; Stack</h2>
-          <p class="section-subheading">Core competencies developed through academic rigor and production projects</p>
+          <p class="section-subheading">Core competencies developed through university coursework and production projects</p>
         </div>
       </div>
 
@@ -429,7 +404,7 @@
             <li><strong>JavaScript (ES6+)</strong> — Async/await, DOM APIs, Closures</li>
             <li><strong>Python</strong> — Scripting, automation, data wrangling</li>
             <li><strong>React.js</strong> — Hooks, lifting state, component lifecycles</li>
-            <li><strong>HTML5 &amp; CSS3</strong> — Semantic layouts, Grid, Flexbox, Custom Properties</li>
+            <li><strong>HTML5 &amp; CSS3</strong> — Semantic layouts, Grid, Flexbox, Tokens</li>
             <li><strong>SQL</strong> — Relational schema design, queries, table joins</li>
           </ul>
         </div>
@@ -440,10 +415,10 @@
             <h3 class="pillar-title">Cloud, Security &amp; AI</h3>
           </div>
           <ul class="pillar-list">
-            <li><strong>AWS Fundamentals</strong> — EC2, S3, IAM, Cloud Practitioner Essentials</li>
+            <li><strong>AWS Foundations</strong> — EC2, S3, IAM, Cloud Practitioner Essentials</li>
             <li><strong>Firebase Platform</strong> — Authentication, Firestore, Security Rules</li>
-            <li><strong>Cybersecurity Foundations</strong> — Defensive mechanisms, SIEM log review</li>
-            <li><strong>Google AI Studio</strong> — System instructions, JSON-mode prompt engineering</li>
+            <li><strong>Cybersecurity Foundations</strong> — Threat vectors, access controls, SIEM basics</li>
+            <li><strong>Google AI Studio</strong> — System instructions, structured JSON extraction</li>
             <li><strong>Streamlit</strong> — Rapid web UI deployment for Python utilities</li>
           </ul>
         </div>
@@ -454,10 +429,10 @@
             <h3 class="pillar-title">Systems &amp; Enterprise IT</h3>
           </div>
           <ul class="pillar-list">
-            <li><strong>Operating System Diagnostics</strong> — CLI scripting, PowerShell, CMD</li>
-            <li><strong>Asset Management</strong> — Enterprise network hardware &amp; workstation audits</li>
+            <li><strong>OS Diagnostics</strong> — CLI scripting, PowerShell, CMD</li>
+            <li><strong>Asset Auditing</strong> — Network switches, POS terminals, workstation audits</li>
             <li><strong>Version Control</strong> — Git, branching, Pull Requests, GitHub Pages</li>
-            <li><strong>Incident Support</strong> — Emergency response drills &amp; disaster recovery SOPs</li>
+            <li><strong>Incident Support</strong> — Endpoint troubleshooting, backup verification SOPs</li>
           </ul>
         </div>
       </div>
@@ -476,24 +451,20 @@
         <article class="timeline-entry">
           <div class="entry-meta">
             <span class="entry-dates">OCT 2024 &mdash; JAN 2025</span>
-            <span class="entry-duration">3-Month Internship</span>
+            <span class="entry-duration">4-Month Internship</span>
             <span class="entry-location">Bayan Lepas, Penang</span>
           </div>
           <div class="entry-body">
             <h3 class="entry-role">IT Intern</h3>
-            <span class="entry-employer">AMARI SPICE Penang</span>
+            <span class="entry-employer">AMARI SPICE Penang &bull; Bayan Lepas, Penang</span>
             <p class="entry-overview">
-              Managed on-site IT operations and enterprise hardware infrastructures across hotel guest systems,
-              corporate back-offices, and conference networking facilities.
+              Provided on-site technical support and hardware infrastructure maintenance across hotel administrative offices, guest facilities, and convention venues.
             </p>
             <ul class="entry-points">
-              <li>Audited, tagged, and systematically documented enterprise network switches, Point-of-Sale (POS)
-                terminals, and workstation assets.</li>
-              <li>Executed Command Prompt diagnostic and administrative scripts to inspect operating system parameters
-                and verify patch compliance.</li>
-              <li>Authored and distributed cybersecurity awareness collateral to improve staff adherence to data
-                security and anti-phishing protocols.</li>
-              <li>Collaborated in scheduled business continuity and emergency IT disaster response drills.</li>
+              <li>Audited and cataloged 100+ hardware endpoints, including Point-of-Sale (POS) terminals, network switches, and corporate workstations.</li>
+              <li>Executed Windows CLI utilities (<code>netsh</code>, <code>ipconfig</code>, <code>systeminfo</code>) to diagnose connectivity and verify workstation domain configurations.</li>
+              <li>Developed and distributed cybersecurity awareness guides covering phishing indicators and account security hygiene for operational staff.</li>
+              <li>Supported scheduled system maintenance windows and workstation backup checks under the direction of the IT Lead.</li>
             </ul>
           </div>
         </article>
@@ -505,12 +476,11 @@
       <div class="section-top-bar">
         <div>
           <h2 id="cred-header" class="section-heading">Education &amp; Verified Credentials</h2>
-          <p class="section-subheading">University degrees and external third-party certifications</p>
+          <p class="section-subheading">University degrees and certified coursework</p>
         </div>
       </div>
 
       <div class="credentials-double-column">
-        <!-- Education Column -->
         <div class="cred-col">
           <h3 class="col-heading">Academic Qualifications</h3>
           <div class="edu-card">
@@ -518,9 +488,8 @@
               <h4 class="edu-name">Bachelor in IT (Honours) in Software System Development</h4>
               <span class="edu-year">2026 – Present</span>
             </div>
-            <span class="edu-inst">TAR UMT Penang &bull; <strong>CGPA: </strong></span>
-            <p class="edu-details">Core focuses: Advanced algorithms, distributed software architectures, cloud system
-              design, and database normalization.</p>
+            <span class="edu-inst">TAR UMT Penang &bull; <strong>Year 1 (Degree in Progress)</strong></span>
+            <p class="edu-details">Core focuses: Distributed systems, software engineering methodologies, data structures, and database normalization.</p>
           </div>
 
           <div class="edu-card">
@@ -529,20 +498,18 @@
               <span class="edu-year">2023 – 2025</span>
             </div>
             <span class="edu-inst">TAR UMT Penang &bull; <strong>CGPA: 3.0762</strong></span>
-            <p class="edu-details">Foundational coursework in Object-Oriented Programming (Java/C++), Data Structures,
-              Systems Analysis, and SQL database management.</p>
+            <p class="edu-details">Foundational coursework in Object-Oriented Programming (Java/C++), SQL, and Computer Architecture.</p>
           </div>
         </div>
 
-        <!-- Certifications Column -->
         <div class="cred-col">
-          <h3 class="col-heading">Verified Certifications</h3>
+          <h3 class="col-heading">Certifications &amp; Coursework</h3>
           <div class="cert-item">
             <div class="cert-left">
               <h4 class="cert-name">AWS Cloud Practitioner Essentials</h4>
-              <span class="cert-by">Amazon Web Services &bull; 2026</span>
+              <span class="cert-by">Amazon Web Services (Skill Builder) &bull; Coursework Completed 2026</span>
             </div>
-            <span class="cert-badge">AWS Skill Builder</span>
+            <span class="cert-badge">Coursework</span>
           </div>
 
           <div class="cert-item">
@@ -577,32 +544,28 @@
         <div class="leadership-card">
           <span class="lead-role">IT Team Member</span>
           <h3 class="lead-title">TAR UMT X ACCA Business Game 2026</h3>
-          <p class="lead-desc">Operated technical platforms including digital QR check-in desks, audiovisual streaming
-            rigs, and live tournament troubleshooting.</p>
+          <p class="lead-desc">Operated technical platforms including digital QR check-in desks, audiovisual streaming rigs, and live tournament troubleshooting.</p>
         </div>
         <div class="leadership-card">
           <span class="lead-role">Committee Member</span>
           <h3 class="lead-title">TAR UMT Orientation Week 2024</h3>
-          <p class="lead-desc">Coordinated campus integration, logistics, and digital orientation collateral for over
-            500 incoming university freshmen.</p>
+          <p class="lead-desc">Coordinated campus integration, logistics, and digital orientation collateral for over 500 incoming university freshmen.</p>
         </div>
         <div class="leadership-card">
           <span class="lead-role">1st Runner-Up (Naib Johan)</span>
           <h3 class="lead-title">Masiswa Zon Utara Catur Berpasukan (2024)</h3>
-          <p class="lead-desc">Represented TAR UMT Penang campus in inter-varsity chess championships, demonstrating
-            tactical discipline and analytical composure.</p>
+          <p class="lead-desc">Represented TAR UMT Penang campus in inter-varsity chess championships, demonstrating tactical discipline and analytical composure.</p>
         </div>
       </div>
     </section>
 
-    <!-- Professional Inquiry / Contact Section -->
+    <!-- Contact Section -->
     <section id="contact" class="content-section contact-block" aria-labelledby="contact-heading">
       <div class="contact-card">
         <span class="contact-kicker">INITIATE CONVERSATION</span>
         <h2 id="contact-heading" class="contact-title">Let’s Discuss Internship Opportunities</h2>
         <p class="contact-text">
-          I am actively seeking an <strong>IT / Software Engineering Internship placement starting in January
-            2028</strong>. Open to opportunities across Penang, Greater KL, or remote engineering teams.
+          I am an undergraduate pursuing Software System Development, actively preparing for my mandatory university industrial training placement (seeking 2027/2028 placement). Open to opportunities in Penang, Greater KL, or remote engineering teams.
         </p>
 
         <div class="contact-interactive-box">
@@ -614,8 +577,7 @@
           </div>
           <div class="contact-quick-links">
             <a href="mailto:bryankzk-pm23@student.tarc.edu.my" class="btn btn-primary">Open Mail Client &nearr;</a>
-            <a href="https://www.linkedin.com/in/bryan-kum-11b184330" class="btn btn-secondary" target="_blank"
-              rel="noopener noreferrer">LinkedIn Message &nearr;</a>
+            <a href="https://www.linkedin.com/in/bryan-kum-11b184330" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn Message &nearr;</a>
           </div>
         </div>
       </div>
@@ -623,12 +585,11 @@
 
   </main>
 
-  <!-- Editorial Static Footer -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-row">
       <div class="footer-left">
-        <p>&copy; <span id="current-year">2026</span> Bryan Kum Zhan Kin. Handcrafted with semantic HTML5, modern CSS,
-          &amp; vanilla JS.</p>
+        <p>&copy; <span id="current-year">2026</span> Bryan Kum Zhan Kin. Handcrafted with semantic HTML5, modern CSS, &amp; vanilla JS.</p>
         <span class="footer-build-meta">Zero build frameworks &bull; Zero tracking &bull; Hosted on GitHub Pages</span>
       </div>
       <div class="footer-right">
@@ -640,5 +601,4 @@
   <!-- Vanilla Production JavaScript -->
   <script src="assets/js/main.js"></script>
 </body>
-
 </html>

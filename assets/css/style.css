@@ -121,7 +121,7 @@ body {
   top: 1rem;
 }
 
-a:focus-visible, button:focus-visible, input:focus-visible {
+a:focus-visible, button:focus-visible, input:focus-visible, .tab-panel:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
@@ -134,15 +134,15 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   3. Header Navigation & Telemetry Bar
+   3. Header Navigation & Telemetry
    -------------------------------------------------------------------------- */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 200;
-  background-color: rgba(248, 250, 252, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(248, 250, 252, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border-subtle);
   height: 56px;
   display: flex;
@@ -150,7 +150,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 [data-theme="dark"] .site-header {
-  background-color: rgba(9, 13, 22, 0.88);
+  background-color: rgba(9, 13, 22, 0.92);
 }
 
 .header-container {
@@ -241,7 +241,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background-color var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .theme-btn:hover {
@@ -356,7 +356,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   5. Buttons & Controls
+   5. Buttons & Controls (GPU-Safe Transitions)
    -------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
@@ -368,7 +368,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border-radius: var(--radius-sm);
   text-decoration: none;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), opacity var(--transition-fast);
 }
 
 .btn-icon {
@@ -398,7 +398,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   6. Sections & Architecture
+   6. Sections & Tab Controls
    -------------------------------------------------------------------------- */
 .content-section {
   padding: 3rem 0;
@@ -444,7 +444,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   padding: 0.3rem 0.65rem;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .filter-btn.active {
@@ -453,9 +453,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   box-shadow: var(--shadow-sm);
 }
 
-/* --------------------------------------------------------------------------
-   7. Project Showcase Cards with Interactive Tabs
-   -------------------------------------------------------------------------- */
+/* Project Showcase Cards */
 .project-grid {
   display: flex;
   flex-direction: column;
@@ -529,6 +527,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   text-decoration: none;
   padding: 0.35rem 0.65rem;
   border-radius: var(--radius-sm);
+  transition: opacity var(--transition-fast);
 }
 
 .link-btn.primary {
@@ -544,7 +543,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 .link-btn:hover {
-  opacity: 0.9;
+  opacity: 0.88;
 }
 
 .project-lead-text {
@@ -578,7 +577,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
   border-bottom: 2px solid transparent;
 }
 
@@ -589,12 +588,18 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 .tab-panel {
-  display: none;
   padding: 1rem;
 }
 
-.tab-panel.active {
-  display: block;
+.tab-panel[hidden] {
+  display: none;
+}
+
+/* Graceful degradation for zero-JS */
+.no-js .tab-panel[hidden] {
+  display: block !important;
+  border-top: 1px dashed var(--border-subtle);
+  margin-top: 1rem;
 }
 
 /* Simulation Components */
@@ -635,6 +640,11 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.sim-btn:hover {
+  opacity: 0.9;
 }
 
 .sim-btn.sm {
@@ -663,6 +673,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border-radius: var(--radius-sm);
   color: var(--text-muted);
   cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
 }
 
 .chip:hover {
@@ -735,7 +746,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   margin-bottom: 0.4rem;
 }
 
-/* Lifecycle flow for Visitor Management */
+/* Lifecycle Flow */
 .lifecycle-pipeline {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -774,15 +785,27 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   color: var(--text-muted);
 }
 
+.calc-widget {
+  display: flex;
+  flex-direction: column;
+}
+
 .calc-row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   font-size: 0.82rem;
-  padding: 0.5rem;
+  padding: 0.65rem;
   background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   margin-bottom: 0.5rem;
+}
+
+.calc-actions {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .positive-balance {
@@ -790,11 +813,11 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   8. Skills Editorial Grid
+   7. Skills Editorial Grid (Responsive Without Overflow)
    -------------------------------------------------------------------------- */
 .skills-editorial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   gap: 1.25rem;
 }
 
@@ -838,7 +861,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   9. Experience Timeline
+   8. Experience Timeline
    -------------------------------------------------------------------------- */
 .experience-timeline {
   display: flex;
@@ -903,7 +926,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   10. Credentials Double Column
+   9. Credentials Column
    -------------------------------------------------------------------------- */
 .credentials-double-column {
   display: grid;
@@ -986,7 +1009,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   11. Leadership Grid
+   10. Leadership Grid
    -------------------------------------------------------------------------- */
 .leadership-grid {
   display: grid;
@@ -1023,7 +1046,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   12. Contact Section
+   11. Contact Block
    -------------------------------------------------------------------------- */
 .contact-card {
   background-color: var(--bg-surface);
@@ -1071,12 +1094,15 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-full);
   padding: 0.35rem 0.5rem 0.35rem 1.25rem;
+  max-width: 100%;
 }
 
 .email-display {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-main);
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 .copy-btn {
@@ -1088,11 +1114,15 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
   cursor: pointer;
-  transition: opacity var(--transition-fast);
+  transition: opacity var(--transition-fast), background-color var(--transition-fast);
 }
 
 .copy-btn:hover {
   opacity: 0.9;
+}
+
+.copy-btn.copy-success {
+  background-color: var(--status-green);
 }
 
 .contact-quick-links {
@@ -1101,7 +1131,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   13. Footer
+   12. Footer
    -------------------------------------------------------------------------- */
 .site-footer {
   margin-top: auto;
@@ -1138,23 +1168,9 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   14. Responsive Layout (Mobile / Tablet)
+   13. Multi-Tier Responsive Layout (Mobile / Fold / Tablet)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  .site-header {
-    height: auto;
-    padding: 0.65rem 0;
-  }
-
-  .header-container {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .nav-list {
-    gap: 0.75rem;
-  }
-
   .hero-layout {
     flex-direction: column;
     align-items: center;
@@ -1166,11 +1182,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     justify-content: center;
   }
 
-  .hero-cta-group .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
   .timeline-entry {
     grid-template-columns: 1fr;
     gap: 0.5rem;
@@ -1179,12 +1190,42 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   .credentials-double-column {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    height: auto;
+    position: relative;
+    padding: 0.75rem 0;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.85rem;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
 
   .email-copy-bar {
-    width: 100%;
     flex-direction: column;
-    padding: 0.75rem;
+    padding: 0.85rem;
     border-radius: var(--radius-md);
+    width: 100%;
+  }
+
+  .copy-btn {
+    width: 100%;
+    margin-top: 0.35rem;
   }
 
   .contact-quick-links {
@@ -1195,5 +1236,27 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   .contact-quick-links .btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .calc-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .email-display {
+    font-size: 0.75rem;
+  }
+
+  .avatar-ring {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-avatar {
+    width: 120px;
+    height: 120px;
   }
 }
